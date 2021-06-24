@@ -1,2 +1,8 @@
 Flask>=1.0,<=1.1.2
+seaborn
 numpy
+pandas
+matplotlib
+dash
+dash_core_components
+dash_html_components
