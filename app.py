@@ -58,4 +58,4 @@ def hello():
 
 @app.route("/dash")
 def my_dash_app():
-    return app.index()
+    return app1.index()
