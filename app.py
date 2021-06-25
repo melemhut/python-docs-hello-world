@@ -23,14 +23,14 @@ def connexion_blob_storage():
 # cup = pd.read_csv(PROCESSDIRECTORY + "JLR-IPace-N1_Cu_p", encoding=FILEENCODING, sep=';', header=0)
 
 
-server = Flask(__name__)
-app = dash.Dash(
+app = Flask(__name__)
+app1 = dash.Dash(
     __name__,
     server=server,
     url_base_pathname='/dash/'
 )
 
-app.layout = html.Div(children=[
+app1.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
 
     html.Div(children='''
@@ -51,11 +51,11 @@ app.layout = html.Div(children=[
     )
 ])
 
-@server.route("/")
+@app.route("/")
 def hello():
     sns.distplot(df["Cu"], rug=True, hist=False)
     return render_template('cu.html', name = plt.show())
 
-@server.route("/dash")
+@app.route("/dash")
 def my_dash_app():
     return app.index()
